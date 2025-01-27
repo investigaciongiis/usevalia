@@ -1,0 +1,209 @@
+{
+    "creators": [
+        {
+          "affiliations": [
+            {
+              "name": "University of Murcia"
+            }
+          ],
+          "person_or_org": {
+            "family_name": "Sobrino Duque",
+            "given_name": "Raimel",
+            "identifiers": [
+              {
+                "identifier": "0000-0002-6912-1172",
+                "scheme": "orcid"
+              }
+            ],
+            "name": "Sobrino Duque, Raimel",
+            "type": "personal"
+          },
+          "role": {
+            "id": "researcher",
+            "title": {
+              "de": "WissenschaftlerIn",
+              "en": "Researcher"
+            }
+          }
+        },
+        {
+          "affiliations": [
+            {
+              "name": "University of Murcia"
+            }
+          ],
+          "person_or_org": {
+            "family_name": "Martinez Rojo",
+            "given_name": "Noelia",
+            "name": "Martinez Rojo, Noelia",
+            "type": "personal"
+          },
+          "role": {
+            "id": "researcher",
+            "title": {
+              "de": "WissenschaftlerIn",
+              "en": "Researcher"
+            }
+          }
+        },
+        {
+          "affiliations": [
+            {
+              "name": "University of Murcia"
+            }
+          ],
+          "person_or_org": {
+            "family_name": "Carrillo de Gea",
+            "given_name": "Juan Manuel",
+            "identifiers": [
+              {
+                "identifier": "0000-0002-3320-622X",
+                "scheme": "orcid"
+              }
+            ],
+            "name": "Carrillo de Gea, Juan Manuel",
+            "type": "personal"
+          },
+          "role": {
+            "id": "researcher",
+            "title": {
+              "de": "WissenschaftlerIn",
+              "en": "Researcher"
+            }
+          }
+        },
+        {
+          "affiliations": [
+            {
+              "name": "University of Murcia"
+            }
+          ],
+          "person_or_org": {
+            "family_name": "L\u00f3pez Jim\u00e9nez",
+            "given_name": "Juan Jos\u00e9",
+            "identifiers": [
+              {
+                "identifier": "0000-0001-5244-2773",
+                "scheme": "orcid"
+              }
+            ],
+            "name": "L\u00f3pez Jim\u00e9nez, Juan Jos\u00e9",
+            "type": "personal"
+          },
+          "role": {
+            "id": "researcher",
+            "title": {
+              "de": "WissenschaftlerIn",
+              "en": "Researcher"
+            }
+          }
+        },
+        {
+          "affiliations": [
+            {
+              "name": "University of Murcia"
+            }
+          ],
+          "person_or_org": {
+            "family_name": "Nicol\u00e1s Ros",
+            "given_name": "Joaqu\u00edn",
+            "identifiers": [
+              {
+                "identifier": "0000-0003-1760-3804",
+                "scheme": "orcid"
+              }
+            ],
+            "name": "Nicol\u00e1s Ros, Joaqu\u00edn",
+            "type": "personal"
+          },
+          "role": {
+            "id": "researcher",
+            "title": {
+              "de": "WissenschaftlerIn",
+              "en": "Researcher"
+            }
+          }
+        },
+        {
+          "affiliations": [
+            {
+              "name": "University of Murcia"
+            }
+          ],
+          "person_or_org": {
+            "family_name": "Fern\u00e1ndez-Alem\u00e1n",
+            "given_name": "Jos\u00e9 Luis",
+            "identifiers": [
+              {
+                "identifier": "0000-0002-0176-450X",
+                "scheme": "orcid"
+              }
+            ],
+            "name": "Fern\u00e1ndez-Alem\u00e1n, Jos\u00e9 Luis",
+            "type": "personal"
+          },
+          "role": {
+            "id": "researcher",
+            "title": {
+              "de": "WissenschaftlerIn",
+              "en": "Researcher"
+            }
+          }
+        }
+      ],
+      "funding": [
+        {
+          "award": {
+            "identifiers": [
+              {
+                "identifier": "https://portalinvestigacion.um.es/proyectos/587265/detalle",
+                "scheme": "url"
+              }
+            ],
+            "number": "PID2021-122554OB-C32",
+            "title": {
+              "en": "OASSIS-UMU: hacia Organizaciones Software M\u00e1s Sostenibles: Un Enfoque Hol\u00edstico para Promover la Sostenibilidad Econ\u00f3mica, Humana y Medioambiental"
+            }
+          },
+          "funder": {
+            "id": "003x0zc53",
+            "name": "Agencia Estatal de Investigaci\u00f3n"
+          }
+        }
+      ],
+      "languages": [
+        {
+          "id": "eng",
+          "title": {
+            "en": "English"
+          }
+        }
+      ],
+      "publication_date": "2025-01-27",
+      "publisher": "Zenodo",
+      "references": [
+        {
+          "reference": "Raimel Sobrino-Duque, Noelia Mart\u00ednez-Rojo, Juan Manuel Carrillo de Gea, Juan Jos\u00e9 L\u00f3pez-Jim\u00e9nez, Joaqu\u00edn Nicol\u00e1s, Jos\u00e9 Luis Fern\u00e1ndez-Alem\u00e1n: Evaluating a gamification proposal for learning usability heuristics: Heureka. Int. J. Hum. Comput. Stud. 161: 102774 (2022)"
+        }
+      ],
+      "related_identifiers": [
+        {
+          "identifier": "10.1016/j.ijhcs.2022.102774",
+          "relation_type": {
+            "id": "issupplementto",
+            "title": {
+              "de": "Erg\u00e4nzt",
+              "en": "Is supplement to"
+            }
+          },
+          "resource_type": {
+            "id": "publication-article",
+            "title": {
+              "de": "Zeitschriftenartikel",
+              "en": "Journal article"
+            }
+          },
+          "scheme": "doi"
+        }
+      ]    
+}
