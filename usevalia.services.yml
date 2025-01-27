@@ -1,0 +1,8 @@
+services:
+    usevalia.event_subscriber:
+        class: Drupal\usevalia\EventSubscriber\RedirectAnonymousSubscriber
+        arguments: []
+        tags:
+            - {name: event_subscriber}
+    usevalia.controlador:
+        class: Drupal\usevalia\Service\UsevaliaService

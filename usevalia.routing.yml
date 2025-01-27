@@ -1,0 +1,235 @@
+# Forms
+usevalia.subir_catalogo:
+  path: '/usevalia/subir-catalogo'
+  defaults:
+    _form: '\Drupal\usevalia\Form\SubirCatalogoForm'
+    _title: 'Subir un catálogo'
+  requirements:
+    _permission: 'access content'
+
+usevalia.mostrar_catalogos:
+  path: '/usevalia/mostrar-catalogos'
+  defaults:
+    _form: '\Drupal\usevalia\Form\MostrarCatalogosForm'
+    _title: 'Catálogos'
+  requirements:
+    _permission: 'access content'
+
+usevalia.mostrar_auditorias:
+  path: '/usevalia/mostrar-auditorias'
+  defaults:
+    _form: '\Drupal\usevalia\Form\MostrarAuditoriasForm'
+    _title: 'Auditorías'
+  requirements:
+    _permission: 'access content'
+
+usevalia.crear_puntuacion:
+  path: '/usevalia/crear-puntuacion'
+  defaults:
+    _form: '\Drupal\usevalia\Form\CrearPuntuacionForm'
+    _title: 'Crear un esquema de puntuación'
+  requirements:
+    _permission: 'access content'
+
+usevalia.crear_grupo:
+  path: '/usevalia/crear-grupo-auditores'
+  defaults:
+    _form: '\Drupal\usevalia\Form\CrearGrupoForm'
+    _title: 'Crear un grupo de auditores'
+  requirements:
+    _permission: 'access content'
+
+usevalia.crear_auditoria:
+  path: '/usevalia/crear-auditoria'
+  defaults:
+    _form: '\Drupal\usevalia\Form\CrearAuditoriaForm'
+    _title: 'Crear una auditoría'
+  requirements:
+    _permission: 'access content'
+
+usevalia.cerrar_auditoria:
+  path: '/usevalia/cerrar-auditoria'
+  defaults:
+    _form: '\Drupal\usevalia\Form\CerrarAuditoriaForm'
+    _title: 'Cerrar auditoría'
+  requirements:
+    _permission: 'access content'
+
+usevalia.reabrir_auditoria:
+  path: '/usevalia/reabrir-auditoria'
+  defaults:
+    _form: '\Drupal\usevalia\Form\ReabrirAuditoriaForm'
+    _title: 'Reabrir auditoría'
+  requirements:
+    _permission: 'access content'
+
+usevalia.generar_informe:
+  path: '/usevalia/generar-informe'
+  defaults:
+    _form: '\Drupal\usevalia\Form\GenerarInformeForm'
+    _title: 'Generar informe'
+  requirements:
+    _permission: 'access content'
+
+usevalia.generar_graficos:
+  path: '/usevalia/generar-estadisticas'
+  defaults:
+    _form: '\Drupal\usevalia\Form\GenerarEstadisticasForm'
+    _title: 'Ver estadísticas'
+  requirements:
+    _permission: 'access content'
+
+usevalia.crear_aplicacion:
+  path: '/usevalia/crear-aplicacion'
+  defaults:
+    _form: '\Drupal\usevalia\Form\CrearAplicacionForm'
+    _title: 'Crear aplicacion'
+  requirements:
+    _permission: 'access content'
+
+usevalia.borrar_aplicacion:
+  path: '/usevalia/borrar-aplicacion'
+  defaults:
+    _form: '\Drupal\usevalia\Form\BorrarAplicacionForm'
+    _title: 'Borrar aplicacion'
+  requirements:
+    _permission: 'access content'
+
+usevalia.borrar_puntuacion:
+  path: '/usevalia/borrar-puntuacion'
+  defaults:
+    _form: '\Drupal\usevalia\Form\BorrarPuntuacionForm'
+    _title: 'Borrar esquema de puntuación'
+  requirements:
+    _permission: 'access content'
+
+usevalia.borrar_grupo:
+  path: '/usevalia/borrar-grupo'
+  defaults:
+    _form: '\Drupal\usevalia\Form\BorrarGrupoForm'
+    _title: 'Borrar grupo de auditores'
+  requirements:
+    _permission: 'access content'
+
+usevalia.borrar_catalogo:
+  path: '/usevalia/borrar-catalogo'
+  defaults:
+    _form: '\Drupal\usevalia\Form\BorrarCatalogoForm'
+    _title: 'Borrar catalogo'
+  requirements:
+    _permission: 'access content'
+
+usevalia.borrar_auditoria:
+  path: '/usevalia/borrar-auditoria'
+  defaults:
+    _form: '\Drupal\usevalia\Form\BorrarAuditoriaForm'
+    _title: 'Borrar auditoría'
+  requirements:
+    _permission: 'access content'
+
+# /Puntuacion !!
+usevalia.puntuacion_uno:
+  path: '/usevalia/puntuacion-uno'
+  defaults:
+    _form: '\Drupal\usevalia\Form\Puntuacion\PuntuacionUnoForm'
+    _title: 'Evaluar auditoría'
+  requirements:
+    _permission: 'access content'
+
+usevalia.puntuacion_dos:
+  path: '/usevalia/puntuacion-dos'
+  defaults:
+    _form: '\Drupal\usevalia\Form\Puntuacion\PuntuacionDosForm'
+    _title: 'Evaluar auditoría'
+  requirements:
+    _permission: 'access content'
+
+usevalia.puntuacion_tareas:
+  path: '/usevalia/puntuacion-tareas'
+  defaults:
+    _form: '\Drupal\usevalia\Form\Puntuacion\PuntuacionTareas'
+    _title: 'Evaluación mediante tareas'
+  requirements:
+    _permission: 'access content'
+
+# /ModificarAplicacion !!
+usevalia.modificar_aplicacion_uno:
+  path: '/usevalia/modificar-aplicacion-uno'
+  defaults:
+    _form: '\Drupal\usevalia\Form\ModificarAplicacion\ModificarAplicacionUnoForm'
+    _title: 'Modificar aplicación'
+  requirements:
+    _permission: 'access content'
+
+usevalia.modificar_aplicacion_dos:
+  path: '/usevalia/modificar-aplicacion-dos'
+  defaults:
+    _form: '\Drupal\usevalia\Form\ModificarAplicacion\ModificarAplicacionDosForm'
+    _title: 'Modificar aplicación'
+  requirements:
+    _permission: 'access content'
+
+# Controllers
+usevalia:
+  path: '/usevalia'
+  defaults:
+    _controller: '\Drupal\usevalia\Controller\MainPageController::content'
+    _title: 'Página principal'
+  requirements:
+    _permission: 'access content'
+
+usevalia.listado_catalogo:
+  path: '/usevalia/listado-catalogo'
+  defaults:
+    _controller: '\Drupal\usevalia\Controller\ListadoCatalogoController::content'
+    _title: 'Información del catálogo'
+  requirements:
+    _permission: 'access content'
+
+usevalia.listado_puntuaciones:
+  path: '/usevalia/listado-puntuaciones'
+  defaults:
+    _controller: '\Drupal\usevalia\Controller\ListadoPuntuacionesController::content'
+    _title: 'Esquemas de puntuación'
+  requirements:
+    _permission: 'access content'
+
+usevalia.listado_grupos_auditores:
+  path: '/usevalia/listado-grupos-auditores'
+  defaults:
+    _controller: '\Drupal\usevalia\Controller\ListadoGruposAuditoresController::content'
+    _title: 'Grupos de auditores'
+  requirements:
+    _permission: 'access content'
+
+usevalia.listado_aplicaciones:
+  path: '/usevalia/listado-aplicaciones'
+  defaults:
+    _controller: '\Drupal\usevalia\Controller\ListadoAplicacionesController::content'
+    _title: 'Aplicaciones'
+  requirements:
+    _permission: 'access content'
+
+usevalia.listado_fuentes:
+  path: '/usevalia/listado-fuentes'
+  defaults:
+    _controller: '\Drupal\usevalia\Controller\ListadoFuentesController::content'
+    _title: 'Fuentes'
+  requirements:
+    _permission: 'access content'
+
+usevalia.listado_auditoria:
+  path: '/usevalia/listado-auditoria'
+  defaults:
+    _controller: '\Drupal\usevalia\Controller\ListadoAuditoriaController::content'
+    _title: 'Información de la auditoría'
+  requirements:
+    _permission: 'access content'
+
+usevalia.estadisticas:
+  path: '/usevalia/estadisticas'
+  defaults:
+    _controller: '\Drupal\usevalia\Controller\ListadoEstadisticasController::content'
+    _title: 'Estadísticas de la auditoría'
+  requirements:
+    _permission: 'access content'

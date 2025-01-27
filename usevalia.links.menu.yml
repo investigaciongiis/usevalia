@@ -1,0 +1,126 @@
+# Menu links for the "Tools" menu.
+
+usevalia.main:
+    title: Página principal
+    route_name: usevalia
+
+usevalia.aplicaciones:
+    title: Aplicaciones
+    route_name: usevalia.listado_aplicaciones
+    expanded: TRUE
+    weight: 1
+
+usevalia.crear_aplicacion:
+    title: Crear aplicación
+    route_name: usevalia.crear_aplicacion
+    parent: usevalia.aplicaciones
+
+usevalia.modificar_aplicacion:
+    title: Modificar aplicación
+    route_name: usevalia.modificar_aplicacion_uno
+    parent: usevalia.aplicaciones
+    weight: 1
+
+usevalia.borrar_aplicacion:
+    title: Borrar aplicación
+    route_name: usevalia.borrar_aplicacion
+    parent: usevalia.aplicaciones
+    weight: 2
+
+usevalia.esquemas_puntuaciones:
+    title: Esquemas de puntuaciones
+    route_name: usevalia.listado_puntuaciones
+    expanded: TRUE
+    weight: 1
+
+usevalia.crear_puntuacion:
+    title: Crear esquema de puntuación
+    route_name: usevalia.crear_puntuacion
+    parent: usevalia.esquemas_puntuaciones
+
+usevalia.borrar_puntuacion:
+    title: Borrar esquema de puntuación
+    route_name: usevalia.borrar_puntuacion
+    parent: usevalia.esquemas_puntuaciones
+    weight: 2
+
+usevalia.mostrar_grupo_auditores:
+    title: Grupos de auditores
+    route_name: usevalia.listado_grupos_auditores
+    expanded: TRUE
+    weight: 1
+
+usevalia.crear_grupo_auditores:
+    title: Crear grupo de auditores
+    route_name: usevalia.crear_grupo
+    parent: usevalia.mostrar_grupo_auditores
+
+usevalia.borrar_grupo_auditores:
+    title: Borrar grupo de auditores
+    route_name: usevalia.borrar_grupo
+    parent: usevalia.mostrar_grupo_auditores
+    weight: 1
+
+usevalia.catalogos:
+    title: Catálogos
+    route_name: usevalia.mostrar_catalogos
+    expanded: TRUE
+    weight: 3
+
+usevalia.subir_catalogo:
+    title: Subir catálogo
+    route_name: usevalia.subir_catalogo
+    parent: usevalia.catalogos
+
+usevalia.borrar_catalogo:
+    title: Borrar catálogo
+    route_name: usevalia.borrar_catalogo
+    parent: usevalia.catalogos
+    weight: 2
+
+usevalia.mostrar_auditorias:
+    title: Auditorías
+    route_name: usevalia.mostrar_auditorias
+    expanded: TRUE
+    weight: 4
+
+usevalia.crear_auditoria:
+    title: Crear auditoría
+    route_name: usevalia.crear_auditoria
+    parent: usevalia.mostrar_auditorias
+
+usevalia.borrar_auditoria:
+    title: Borrar auditoría
+    route_name: usevalia.borrar_auditoria
+    parent: usevalia.mostrar_auditorias
+    weight: 5
+
+usevalia.puntuacion:
+    title: Evaluar auditoría
+    route_name: usevalia.puntuacion_uno
+    parent: usevalia.mostrar_auditorias
+    weight: 10
+
+usevalia.cerrar_auditoria:
+    title: Cerrar auditoría
+    route_name: usevalia.cerrar_auditoria
+    parent: usevalia.mostrar_auditorias
+    weight: 20
+
+usevalia.reabrir_auditoria:
+    title: Reabrir auditoría
+    route_name: usevalia.reabrir_auditoria
+    parent: usevalia.mostrar_auditorias
+    weight: 20
+
+usevalia.generar_informe:
+    title: Generar informe
+    route_name: usevalia.generar_informe
+    parent: usevalia.mostrar_auditorias
+    weight: 30
+
+usevalia.generar_graficos:
+  title: Ver estadísticas
+  route_name: usevalia.generar_graficos
+  parent: usevalia.mostrar_auditorias
+  weight: 40

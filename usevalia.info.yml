@@ -1,0 +1,6 @@
+name: Usevalia
+type: module
+description: 'Módulo del programa Usevalia.'
+package: Usevalia
+core: 8.x
+hidden: false

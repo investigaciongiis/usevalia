@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="src/Classes"/>
+	<buildpathentry kind="src" path="src/Controller"/>
+	<buildpathentry kind="src" path="src/EventSubscriber"/>
+	<buildpathentry kind="src" path="src/Form"/>
+	<buildpathentry kind="src" path="src/Service"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>

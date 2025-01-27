@@ -1,0 +1,959 @@
+<?php
+
+/*
+ * Copyright (C) 2018 luis
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ */
+
+/**
+ * @file
+ * Install, update and uninstall functions for the profilename install profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function usevalia_install()
+{
+    // First, do everything in standard profile.
+    include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
+    standard_install();
+
+    // Can add code in here to make nodes, terms, etc.
+
+    $connection = \Drupal::database();
+
+    $entries = [
+      ['nombre' =>'Buscadores/Portales'],
+    	['nombre' =>'Blogs/Informativas'],
+    	['nombre' =>'Foros/Interacción'],
+    	['nombre' =>'Redes sociales'],
+    	['nombre' =>'Transaccionales'],
+    	['nombre' =>'Comercio electrónico'],
+    	['nombre' =>'Correo electrónico'],
+    	['nombre' =>'Entretenimiento'],
+    	['nombre' =>'Académico'],
+      ['nombre' =>'Colaborativas'],
+    	['nombre' =>'Descargas'],
+    	['nombre' =>'Corporativa/Entidades públicas'],
+    	['nombre' =>'Servicios'],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__categoria_web')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Registrarse', 'categoria' =>1],
+    	['nombre' =>'Iniciar sesión', 'categoria' =>1],
+    	['nombre' =>'Búsqueda con palabras', 'categoria' =>1],
+    	['nombre' =>'Búsqueda con imágenes', 'categoria' =>1],
+    	['nombre' =>'Búsqueda en diferentes idiomas', 'categoria' =>1],
+    	['nombre' =>'Filtrar resultados', 'categoria' =>1],
+    	['nombre' =>'Cambiar idioma', 'categoria' =>1],
+    	['nombre' =>'Búsqueda predictiva', 'categoria' =>1],
+    	['nombre' =>'Sugerencias de búsqueda', 'categoria' =>1],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Registrarse', 'categoria' =>2],
+    	['nombre' =>'Iniciar sesión', 'categoria' =>2],
+    	['nombre' =>'Búsqueda con palabras', 'categoria' =>2],
+    	['nombre' =>'Ver últimas novedades/noticias', 'categoria' =>2],
+    	['nombre' =>'Compartir contenido', 'categoria' =>2],
+    	['nombre' =>'Comentar contenido', 'categoria' =>2],
+    	['nombre' =>'Ver etiquetas', 'categoria' =>2],
+    	['nombre' =>'Valorar contenido', 'categoria' =>2],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Registrarse', 'categoria' =>3],
+    	['nombre' =>'Iniciar sesión', 'categoria' =>3],
+    	['nombre' =>'Búsqueda con palabras', 'categoria' =>3],
+    	['nombre' =>'Ver publicaciones populares', 'categoria' =>3],
+    	['nombre' =>'Ver últimas publicaciones', 'categoria' =>3],
+    	['nombre' =>'Publicar tema', 'categoria' =>3],
+    	['nombre' =>'Citar un tema/publicación', 'categoria' =>3],
+    	['nombre' =>'Responder tema', 'categoria' =>3],
+    	['nombre' =>'Ver perfil de un usuario', 'categoria' =>3],
+      ['nombre' =>'Ver mensajes de un usuario', 'categoria' =>3],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Registrarse', 'categoria' =>4],
+    	['nombre' =>'Iniciar sesión', 'categoria' =>4],
+    	['nombre' =>'Buscar contenido', 'categoria' =>4],
+    	['nombre' =>'Publicar contenido', 'categoria' =>4],
+    	['nombre' =>'Compartir contenido', 'categoria' =>4],
+    	['nombre' =>'Enviar mensajes privados', 'categoria' =>4],
+    	['nombre' =>'Ver perfil de un usuario', 'categoria' =>4],
+    	['nombre' =>'Editar mi perfil', 'categoria' =>4],
+    	['nombre' =>'Ver eitquetas', 'categoria' =>4],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Registrarse', 'categoria' =>5],
+    	['nombre' =>'Iniciar sesión', 'categoria' =>5],
+    	['nombre' =>'Realizar transferencia', 'categoria' =>5],
+    	['nombre' =>'Ver recibos', 'categoria' =>5],
+    	['nombre' =>'Ver saldo', 'categoria' =>5],
+    	['nombre' =>'Ver mis cuentas bancarias', 'categoria' =>5],
+    	['nombre' =>'Ver mis tarjetas', 'categoria' =>5],
+    	['nombre' =>'Solicitar préstamo', 'categoria' =>5],
+    	['nombre' =>'Ver información de una cuenta', 'categoria' =>5],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Registrarse', 'categoria' =>6],
+    	['nombre' =>'Iniciar sesión', 'categoria' =>6],
+    	['nombre' =>'Búsqueda con palabras', 'categoria' =>6],
+    	['nombre' =>'Buscar por categoría', 'categoria' =>6],
+    	['nombre' =>'Ver información producto', 'categoria' =>6],
+    	['nombre' =>'Valorar producto', 'categoria' =>6],
+    	['nombre' =>'Realizar pedido', 'categoria' =>6],
+    	['nombre' =>'Cancelar pedido', 'categoria' =>6],
+    	['nombre' =>'Realizar reclamación', 'categoria' =>6],
+      ['nombre' =>'Añadir producto a lista de deseos', 'categoria' =>6],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Registrarse', 'categoria' =>7],
+    	['nombre' =>'Iniciar sesión', 'categoria' =>7],
+    	['nombre' =>'Redactar correo', 'categoria' =>7],
+    	['nombre' =>'Filtrar correos', 'categoria' =>7],
+    	['nombre' =>'Eliminar correo', 'categoria' =>7],
+    	['nombre' =>'Crear carpetas', 'categoria' =>7],
+    	['nombre' =>'Responder correo', 'categoria' =>7],
+    	['nombre' =>'Bloquear emisor', 'categoria' =>7],
+    	['nombre' =>'Búsqueda por palabras', 'categoria' =>7],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Registrarse', 'categoria' =>8],
+    	['nombre' =>'Iniciar sesión', 'categoria' =>8],
+    	['nombre' =>'Búsqueda con palabras', 'categoria' =>8],
+    	['nombre' =>'Buscar por categoría', 'categoria' =>8],
+    	['nombre' =>'Ver contenido/juego', 'categoria' =>8],
+    	['nombre' =>'Añadir a favoritos', 'categoria' =>8],
+    	['nombre' =>'Valorar contenido/juego', 'categoria' =>8],
+    	['nombre' =>'Ver últimas novedades', 'categoria' =>8],
+    	['nombre' =>'Ver sugerencias', 'categoria' =>8],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Iniciar sesión', 'categoria' =>9],
+    	['nombre' =>'Ver anuncios', 'categoria' =>9],
+    	['nombre' =>'Ver tareas', 'categoria' =>9],
+    	['nombre' =>'Descargar material', 'categoria' =>9],
+    	['nombre' =>'Contactar con un profesor', 'categoria' =>9],
+    	['nombre' =>'Ver notas de exámenes', 'categoria' =>9],
+    	['nombre' =>'Filtrar asignaturas', 'categoria' =>9],
+    	['nombre' =>'Ver planificación/calendario asignatura', 'categoria' =>9],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Registrarse', 'categoria' =>10],
+    	['nombre' =>'Iniciar sesión', 'categoria' =>10],
+    	['nombre' =>'Búsqueda por palabras', 'categoria' =>10],
+    	['nombre' =>'Ver recientes', 'categoria' =>10],
+    	['nombre' =>'Crear nuevo documento', 'categoria' =>10],
+    	['nombre' =>'Filtrar documentos', 'categoria' =>10],
+    	['nombre' =>'Descargar un documento', 'categoria' =>10],
+    	['nombre' =>'Añadir participantes', 'categoria' =>10],
+    	['nombre' =>'Comunicarse con los participantes', 'categoria' =>10],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Registrarse', 'categoria' =>11],
+    	['nombre' =>'Iniciar sesión', 'categoria' =>11],
+    	['nombre' =>'Búsqueda por palabras', 'categoria' =>11],
+    	['nombre' =>'Filtrar descargas', 'categoria' =>11],
+    	['nombre' =>'Buscar por categoría', 'categoria' =>11],
+    	['nombre' =>'Descargar contenido', 'categoria' =>11],
+    	['nombre' =>'Compartir descarga', 'categoria' =>11],
+    	['nombre' =>'Valorar descarga', 'categoria' =>11],
+    	['nombre' =>'Ver descripción descarga', 'categoria' =>11],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Ver información empresa', 'categoria' =>12],
+    	['nombre' =>'Ver tarifas', 'categoria' =>12],
+    	['nombre' =>'Ver servicios proporcionados', 'categoria' =>12],
+    	['nombre' =>'Ver información de contacto', 'categoria' =>12],
+    	['nombre' =>'Ver enlaces a redes sociales', 'categoria' =>12],
+    	['nombre' =>'Cambiar idioma de la página', 'categoria' =>12],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+    $entries = [
+      ['nombre' =>'Registrarse', 'categoria' =>13],
+    	['nombre' =>'Iniciar sesión', 'categoria' =>13],
+    	['nombre' =>'Usar servicio', 'categoria' =>13],
+    	['nombre' =>'Ver ayuda', 'categoria' =>13],
+    	['nombre' =>'Ver información del servicio', 'categoria' =>13],
+    	['nombre' =>'Cambiar idioma de la página', 'categoria' =>13],
+    ];
+    foreach ($entries as $entry) {
+      $connection->insert('usevalia__tarea')->fields($entry)->execute();
+    }
+}
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema() @ingroup usevalia
+ */
+function usevalia_schema()
+{
+    $schema['usevalia__categoria_web'] = [
+      'description' => 'Almacena las categorías web.',
+      'fields' => [
+        'id' => [
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE
+        ],
+        'nombre' => [
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE
+        ]
+      ],
+      'primary key' => [
+        'id'
+      ]
+    ];
+    $schema['usevalia__tarea'] = [
+      'description' => 'Almacena las tareas para la evaluación por tareas.',
+      'fields' => [
+        'id' => [
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE
+        ],
+        'nombre' => [
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE
+        ],
+        'categoria' => [
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE
+        ]
+      ],
+      'primary key' => [
+        'id'
+      ],
+      'foreign keys' => [
+        'FK_Categoria' => [
+          'table' => 'usevalia__categoria_web',
+          'columns' => [
+            'categoria' => 'id'
+          ]
+        ]
+      ]
+    ];
+    $schema['usevalia__aplicacion'] = [
+        'description' => 'Almacena la información de las aplicaciones a evaluar.',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'nombre' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'url' => [
+                'type' => 'text'
+            ],
+            'descripcion' => [
+                'type' => 'text'
+            ],
+            'categoria' => [
+              'type' => 'int',
+              'unsigned' => TRUE,
+              'not null' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'id'
+        ],
+        'foreign keys' => [
+          'FK_Categoria' => [
+            'table' => 'usevalia__categoria_web',
+            'columns' => [
+              'categoria' => 'id'
+            ]
+          ]
+        ]
+    ];
+
+    $schema['usevalia__esquema_puntuacion'] = [
+        'description' => 'Almacena el esquema de un sistema de puntuación',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'nombre' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'descripcion' => [
+                'type' => 'text'
+            ]
+        ],
+        'primary key' => [
+            'id'
+        ]
+    ];
+
+    $schema['usevalia__valor_puntuacion'] = [
+        'description' => 'Reune un posible valor de un esquema de puntuaciones',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'nombre' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'escala' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'tipo' => [
+              'type' => 'varchar',
+              'length' => 255,
+              'not null' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'id'
+        ],
+        'foreign keys' => [
+            'FK_EsquemaValor' => [
+                'table' => 'usevalia__esquema_puntuacion',
+                'columns' => [
+                    'escala' => 'id'
+                ]
+            ]
+        ]
+    ];
+
+    $schema['usevalia__grupo_auditores'] = [
+        'description' => 'Reune un grupo de trabajo de auditores',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'nombre' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'descripcion' => [
+                'type' => 'text'
+            ]
+        ],
+        'primary key' => [
+            'id'
+        ]
+    ];
+
+    $schema['usevalia__grupo_auditores_usuarios'] = [
+        'description' => 'Tabla que agrupa los auditores con sus respectivos grupos',
+        'fields' => [
+            'usuario' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'grupo' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'usuario',
+            'grupo'
+        ],
+        'foreign keys' => [
+            'FK_UsuarioGAU' => [
+                'table' => 'users',
+                'columns' => [
+                    'usuario' => 'uid'
+                ]
+            ],
+            'FK_GrupoAuditoresGAU' => [
+                'table' => 'usevalia__grupo_auditores',
+                'columns' => [
+                    'grupo' => 'id'
+                ]
+            ]
+        ]
+    ];
+
+    $schema['usevalia__etiqueta'] = [
+        'description' => 'Tabla de etiquetas (tags) descriptivas',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'valor' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'id'
+        ]
+    ];
+
+    $schema['usevalia__grupo_auditores_etiqueta'] = [
+        'description' => 'Tabla que relaciona las etiquetas con sus respectivos grupos',
+        'fields' => [
+            'grupo' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'etiqueta' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'grupo',
+            'etiqueta'
+        ],
+        'foreign keys' => [
+            'FK_GrupoAuditoresGAE' => [
+                'table' => 'usevalia__grupo_auditores',
+                'columns' => [
+                    'grupo' => 'id'
+                ]
+            ],
+            'FK_EtiquetaGAE' => [
+                'table' => 'usevalia__etiqueta',
+                'columns' => [
+                    'etiqueta' => 'id'
+                ]
+            ]
+        ]
+    ];
+
+    $schema['usevalia__catalogo'] = [
+        'description' => 'Tabla que reune los catálogos de los usuarios',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'nombre' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'esquema' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'autor' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'grupo' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'lectura' => [
+                'mysql_type' => "ENUM('PUBLICO','GRUPO','PRIVADO')",
+                // 'type' => 'varchar',
+                // 'length' => 10,
+                'not null' => TRUE
+            ],
+            'escritura' => [
+                'mysql_type' => "ENUM('PUBLICO','GRUPO','PRIVADO')",
+                // 'type' => 'varchar',
+                // 'length' => 10,
+                'not null' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'id'
+        ],
+        'foreign keys' => [
+            'FK_EsquemaCatalogo' => [
+                'table' => 'usevalia__esquema_puntuacion',
+                'columns' => [
+                    'esquema' => 'id'
+                ]
+            ],
+            'FK_EsquemaUsuario' => [
+                'table' => 'users',
+                'columns' => [
+                    'autor' => 'uid'
+                ]
+            ],
+            'FK_EsquemaGrupoAuditores' => [
+                'table' => 'usevalia__grupo_auditores',
+                'columns' => [
+                    'grupo' => 'id'
+                ]
+            ]
+        ]
+    ];
+
+    $schema['usevalia__prioridad'] = [
+      'description' => 'Tabla que reúne las prioridades de un catálogo y sus fallos.',
+      'fields' => [
+        'id' => [
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE
+        ],
+        'nombre' => [
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE
+        ],
+        'catalogo' => [
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE
+        ],
+        'peso' => [
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE
+        ],
+        'fallos' => [
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE
+        ]
+      ],
+      'primary key' => [
+        'id'
+      ],
+      'foreign keys' => [
+        'FK_CatalogoGrupoDirectrices' => [
+          'table' => 'usevalia__catalogo',
+          'columns' => [
+            'catalogo' => 'id'
+          ]
+        ]
+      ]
+    ];
+
+    $schema['usevalia__grupo_directrices'] = [
+        'description' => 'Tabla que reune los distintos grupos de directrices dentro de un catálogo',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'nombre' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'catalogo' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'esquema' => [
+                'type' => 'int',
+                'unsigned' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'id'
+        ],
+        'foreign keys' => [
+            'FK_EsquemaGrupoDirectrices' => [
+                'table' => 'usevalia__esquema_puntuacion',
+                'columns' => [
+                    'esquema' => 'id'
+                ]
+            ],
+            'FK_CatalogoGrupoDirectrices' => [
+                'table' => 'usevalia__catalogo',
+                'columns' => [
+                    'catalogo' => 'id'
+                ]
+            ]
+        ]
+    ];
+
+    $schema['usevalia__directriz'] = [
+        'description' => 'Tabla que reune los distintos componentes de una directriz',
+        'fields' => [
+            'iid' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'eid' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'nombre' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'descripcion' => [
+                'type' => 'text'
+            ],
+            'peso' => [
+                'type' => 'int',
+                'default' => 0
+            ],
+            'padre' => [
+                'type' => 'int',
+                'unsigned' => TRUE
+            ],
+            'grupo' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'esquema' => [
+                'type' => 'int',
+                'unsigned' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'iid'
+        ],
+        'foreign keys' => [
+            'FK_TrazaDirectriz' => [
+                'table' => 'usevalia__directriz',
+                'columns' => [
+                    'padre' => 'iid'
+                ]
+            ],
+            'FK_EsquemaDirectriz' => [
+                'table' => 'usevalia__esquema_puntuacion',
+                'columns' => [
+                    'esquema' => 'id'
+                ]
+            ],
+            'FK_GrupoDirectricesDirectriz' => [
+                'table' => 'usevalia__grupo_directrices',
+                'columns' => [
+                    'grupo' => 'id'
+                ]
+            ]
+        ]
+    ];
+
+    $schema['usevalia__fuente'] = [
+        'description' => 'Tabla que reune las distintas fuentes',
+        'fields' => [
+            'iid' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'eid' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'nombre' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'descripcion' => [
+                'type' => 'text'
+            ],
+            'url' => [
+                'type' => 'text'
+            ]
+        ],
+        'primary key' => [
+            'iid'
+        ]
+    ];
+
+    $schema['usevalia__directriz_fuente'] = [
+        'description' => 'Tabla que agrupa las distintas directrices con sus respectivas fuentes',
+        'fields' => [
+            'directriz' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'fuente' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'directriz',
+            'fuente'
+        ],
+        'foreign keys' => [
+            'FK_DirectrizDF' => [
+                'table' => 'usevalia__directriz',
+                'columns' => [
+                    'directriz' => 'iid'
+                ]
+            ],
+            'FK_FuenteDF' => [
+                'table' => 'usevalia__fuente',
+                'columns' => [
+                    'fuente' => 'iid'
+                ]
+            ]
+        ]
+    ];
+
+    $schema['usevalia__auditoria'] = [
+        'description' => 'Tabla que reune las distintas auditorias que se han abierto',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'nombre' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'descripcion' => [
+                'type' => 'text'
+            ],
+            'fecha_inicio' => [
+                'mysql_type' => 'DATE',
+                'not null' => TRUE
+            ],
+            'fecha_fin_estimada' => [
+                'mysql_type' => 'DATE',
+                'not null' => TRUE
+            ],
+            'fecha_fin_real' => [
+                'mysql_type' => 'DATE'
+            ],
+            'aplicacion' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'administrador' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'catalogo' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'evaluacion' => [
+              'type' => 'varchar',
+              'length' => 255,
+              'not null' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'id'
+        ],
+        'foreign keys' => [
+            'FK_AplicacionAuditoria' => [
+                'table' => 'usevalia__aplicacion',
+                'columns' => [
+                    'aplicacion' => 'id'
+                ]
+            ],
+            'FK_AdminAuditoria' => [
+                'table' => 'users',
+                'columns' => [
+                    'administrador' => 'uid'
+                ]
+            ],
+            'FK_CatalogoAuditoria' => [
+                'table' => 'usevalia__catalogo',
+                'columns' => [
+                    'catalogo' => 'id'
+                ]
+            ]
+        ]
+    ];
+
+    $schema['usevalia__auditoria_usuarios'] = [
+        'description' => 'Tabla que reune las auditorias con sus respectivos usuarios',
+        'fields' => [
+            'usuario' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'auditoria' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'usuario',
+            'auditoria'
+        ],
+        'foreign keys' => [
+            'FK_UsuarioAU' => [
+                'table' => 'users',
+                'columns' => [
+                    'usuario' => 'uid'
+                ]
+            ],
+            'FK_AuditoriaAU' => [
+                'table' => 'usevalia__auditoria',
+                'columns' => [
+                    'auditoria' => 'id'
+                ]
+            ]
+        ]
+    ];
+
+    $schema['usevalia__puntuacion'] = [
+        'description' => 'Tabla que recoge la puntuacion de una directriz concreta',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'puntuacion' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'usuario' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'auditoria' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'directriz' => [
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE
+            ],
+            'observacion' => [
+              'type' => 'text',
+            ],
+            'mejora' => [
+              'type' => 'text',
+            ],
+            'tarea' => [
+              'type' => 'int',
+              'unsigned' => TRUE
+            ]
+        ],
+        'primary key' => [
+            'id'
+        ],
+        'foreign keys' => [
+            'FK_UsuarioPuntuacion' => [
+                'table' => 'users',
+                'columns' => [
+                    'usuario' => 'uid'
+                ]
+            ],
+            'FK_AuditoriaPuntuacion' => [
+                'table' => 'usevalia__auditoria',
+                'columns' => [
+                    'auditoria' => 'id'
+                ]
+            ],
+            'FK_DirectrizPuntuacion' => [
+                'table' => 'usevalia__directriz',
+                'columns' => [
+                    'directriz' => 'iid'
+                ]
+            ],
+            'FK_Tarea' => [
+              'table' => 'usevalia__tarea',
+              'columns' => [
+                'tarea' => 'id'
+              ]
+            ]
+        ]
+    ];
+
+    return $schema;
+}
